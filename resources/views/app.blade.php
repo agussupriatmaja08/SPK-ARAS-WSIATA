@@ -9,11 +9,13 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     @yield("content")
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- script Jquery Ajax -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <script src="js/script.js"></script>
 </body>
 

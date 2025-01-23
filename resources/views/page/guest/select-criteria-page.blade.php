@@ -32,7 +32,7 @@
             <div class="grid grid-cols-2 gap-6">
                 <!-- Kolom Pertama -->
                 <div class="space-y-4">
-                    @foreach ([['id' => 1, 'label' => 'Kondisi Alam'], ['id' => 2, 'label' => 'Budaya'], ['id' => 3, 'label' => 'Fasilitas'], ['id' => 4, 'label' => 'Aksesibilitas']] as $criteria)
+                    @foreach ([['id' => 1, 'label' => 'Kondisi Alam'], ['id' => 2, 'label' => 'Budaya'], ['id' => 3, 'label' => 'Infrastruktur'], ['id' => 4, 'label' => 'Aksesibilitas']] as $criteria)
                         <div
                             class="flex items-center bg-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
                             <input id="criteria-{{ $criteria['id'] }}" type="checkbox" name="criteria[]"
@@ -69,6 +69,7 @@
 <!-- Footer -->
 @include('page.guest.partials.footer')
 @include('page.guest.components.modal-criteria-detail')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
     document.querySelectorAll('[data-hs-overlay]').forEach(button => {
@@ -82,6 +83,15 @@
             }
         });
     });
+
+
+    @if (session('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '{{ session('error') }}',
+        });
+    @endif
 </script>
 
 
